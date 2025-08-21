@@ -12,6 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  timeout: 600000,
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -29,9 +30,13 @@ export default defineConfig({
      baseURL: 'https://www.favbet.ua',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
-    screenshot: 'only-on-failure', // делает скриншот при ошибке
-    video: 'retain-on-failure',
+    screenshot: 'on', // 'on' | 'off' | 'only-on-failure'
+
+    // Record video
+    video: 'on', // 'on' | 'off' | 'retain-on-failure'
+
+    // Record traces (includes screenshots, network, console logs)
+    trace: 'on', // 'on' | 'off' | 'retain-on-failure'
   },
 
   /* Configure projects for major browsers */

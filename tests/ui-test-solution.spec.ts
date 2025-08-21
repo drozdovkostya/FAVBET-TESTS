@@ -36,7 +36,7 @@ test.describe.serial('Favbest tests', () => {
 
 
     await livePage.clickOnFavoritesButton();
-    await page.reload();
+    await page.reload({ waitUntil: 'domcontentloaded' });
     await expect(page).toHaveURL('/en/live/favorites/');
 
     await expect(await livePage.getFavorites()).toHaveCount(4);

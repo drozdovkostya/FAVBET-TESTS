@@ -43,6 +43,11 @@ favbet-tests/
     npx playwright install
     ```
 
+### To view existing report from last run
+
+1. Extract archive playwright-report.zip
+2. Run command in same path where playwright-report: npx playwright show-report
+
 ### Environment Variables
 
 Set your credentials in environment variables before running tests:
@@ -100,15 +105,3 @@ Reusable page objects are in the `pages/` directory:
 ## 📸 Screenshots
 
 Some tests take screenshots for visual regression. Screenshots are saved in the default Playwright output directory.
-
-## 🤝 Contributing
-
-Feel free to open issues or pull requests for improvements or bug fixes.
-
-## 📄 License
-
-This project is licensed under the ISC License.
-
----
-
-**Note:** This project is for educational/demo purposes. Do not commit real credentials.
