@@ -29,7 +29,7 @@ favbet-tests/
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/favbet-tests.git
+    git clone https://github.com/drozdovkostya/FAVBET-TESTS.git
     cd favbet-tests
     ```
 
