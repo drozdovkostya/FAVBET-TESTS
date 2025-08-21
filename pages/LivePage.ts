@@ -102,7 +102,7 @@ export class LivePage {
 
     }
 
-    async chooseSport(game?: string) {
+    async chooseSport(game?: any) {
         const result = this.page.locator(`${this.liveGameLinks}[href="${game}"]`);
         await result.click();
     }

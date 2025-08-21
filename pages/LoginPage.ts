@@ -33,7 +33,7 @@ export class LoginPage {
         return this.page.locator(this.errorMessage);
     }
 
-    async loginWithCredentials(email: string, password: string) {
+    async loginWithCredentials(email: any, password: any) {
         await this.getEmailInput().fill(email);
         await this.getPasswordInput().fill(password);
         await this.getLoginButton().click();
