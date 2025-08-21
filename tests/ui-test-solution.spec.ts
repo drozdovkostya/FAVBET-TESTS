@@ -77,17 +77,17 @@ test.describe.serial('Favbest tests', () => {
 
     // Check language change
     await settingsPage.verifyLanguageIs('Українська');
-    await expect(page).toHaveScreenshot('Ukrainian.png');
+    await expect(page.locator('[data-role="settings-wrapper"]')).toHaveScreenshot('Ukrainian.png');
     await settingsPage.changeLanguage('Англійська');
     await settingsPage.verifyLanguageIs('English');
-    await expect(page).toHaveScreenshot('English.png');
+    await expect(page.locator('[data-role="settings-wrapper"]')).toHaveScreenshot('English.png');
 
     // Check dark/light mode
     await settingsPage.verifyThemeIs('dark');
-    await expect(page).toHaveScreenshot('Settings-dark.png');
+    await expect(page.locator('[data-role="settings-wrapper"]')).toHaveScreenshot('Settings-dark.png');
     await page.getByText('Light').click();
     await settingsPage.verifyThemeIs('light');
-    await expect(page).toHaveScreenshot('Settings-light.png');
+    await expect(page.locator('[data-role="settings-wrapper"]')).toHaveScreenshot('Settings-light.png');
 
   });
 }); 

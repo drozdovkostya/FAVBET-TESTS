@@ -6,7 +6,6 @@ export class SettingsPage {
 
     readonly page: Page;
 
-
     constructor(page: Page) {
         this.page = page;
     }
