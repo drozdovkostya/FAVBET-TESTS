@@ -1,0 +1,21 @@
+{
+    "devDependencies": {
+        "@playwright/test": "^1.54.2",
+        "@types/node": "^24.3.0",
+        "typescript": "^5.9.2"
+    },
+    "name": "favbet-tests",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "node-fetch": "^3.3.2"
+    }
+}
