@@ -10,6 +10,8 @@ export class SettingsPage {
         this.page = page;
     }
 
+    settingWindowLocator = '[data-role="settings-wrapper"]';
+
     async open() {
         await this.page.goto('/personal-office/settings/');
     }
@@ -27,6 +29,9 @@ export class SettingsPage {
 
     async verifyLanguageIs(language: string) {
         expect(await this.page.getByText(language)).toBeVisible({ timeout: 5000 });
+    }
+    async vrifySettingsScreensot(screenshotName: string) {
+        await expect(this.page.locator(this.settingWindowLocator)).toHaveScreenshot(screenshotName);
     }
 
 }
