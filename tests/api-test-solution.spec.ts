@@ -45,21 +45,22 @@ test.describe.serial('Favbest tests', () => {
 
   test('Test 2 - Instant Games Favorites API', async () => {
 
-    await performInstantGameFavoritesOperation(PHPSESSID, instantGameOperations.getFavouriteInstantGames)
-      .then(games => { return games.length })
-      .then(count => expect(count).toBe(7));
+    await performInstantGameFavoritesOperation(PHPSESSID, instantGameOperations.removeInstantGameFromFavorites, 'mines-favbet');
+
+    let gamesCount = await performInstantGameFavoritesOperation(PHPSESSID, instantGameOperations.getFavouriteInstantGames)
+      .then(games => { return games.length });
 
     await performInstantGameFavoritesOperation(PHPSESSID, instantGameOperations.addInstantGameToFavorites, 'mines-favbet');
 
     await performInstantGameFavoritesOperation(PHPSESSID, instantGameOperations.getFavouriteInstantGames)
       .then(games => { return games.length })
-      .then(count => expect(count).toBe(8));
+      .then(count => expect(count).toBe(gamesCount+1));
 
     await performInstantGameFavoritesOperation(PHPSESSID, instantGameOperations.removeInstantGameFromFavorites, 'mines-favbet');
 
     await performInstantGameFavoritesOperation(PHPSESSID, instantGameOperations.getFavouriteInstantGames)
       .then(games => { return games.length })
-      .then(count => expect(count).toBe(7));
+      .then(count => expect(count).toBe(gamesCount));
 
 
   });
